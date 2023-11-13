@@ -18,6 +18,12 @@ pipeline {
                    steps {
                     sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar"
                    }
-                 }
+            }
+            stage("MOCKITO") {
+                  steps {
+                    sh "mvn test -Dtest=tn.esprit.spring.services.StockServiceImpMock.java"
+                  }
+
+            }
     }
 }
