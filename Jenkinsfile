@@ -11,7 +11,7 @@ pipeline {
             }
             stage("MAVEN BUILD") {
               steps {
-                sh 'mvn clean compile'np
+                sh 'mvn clean compile'
               }
             }
     }
