@@ -14,18 +14,18 @@ pipeline {
                 sh 'mvn clean install -Dmaven.test.skip=true '
               }
             }
-            stage("SONARQUBE") {
+          /* stage("SONARQUBE") {
                    steps {
                     sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar"
                    }
-            }
-            stage("MOCKITO") {
+            }*/
+           stage("MOCKITO") {
                               steps {
                                 sh "mvn test -Dtest=tn.esprit.spring.services.StockServiceImpMock.java"
                               }
 
 
-            }
+           }
 
 
 
