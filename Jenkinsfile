@@ -19,17 +19,14 @@ pipeline {
                     sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar"
                    }
             }
-              stage("MOCKITO") {
+            stage("MOCKITO") {
                               steps {
                                 sh "mvn test -Dtest=tn.esprit.spring.services.StockServiceImpMock.java"
                               }
 
-              }
-               stage('MVN NEXUS') {
-                              steps {
-                                 sh 'mvn deploy -Dmaven.test.skip=true';
-                              }
-               }
+
+            }
+
 
 
 
